@@ -1,5 +1,8 @@
 <?php
 
+add_action( 'wp_enqueue_scripts', 'mb_theme_enqueue_scripts' );
+add_action( 'after_setup_theme', 'mb_add_infinite_scroll_support' );
+
 function mb_css_dir() {
 	if (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) {
 		return get_template_directory_uri() . '/css';
@@ -16,7 +19,6 @@ function mb_js_dir() {
 	}	
 }
 
-add_action('wp_enqueue_scripts', 'mb_theme_enqueue_scripts');
 if (!function_exists('mb_theme_enqueue_scripts')) {
   function mb_theme_enqueue_scripts(){
   	wp_enqueue_script('modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', null, false, false);
@@ -28,4 +30,11 @@ if (!function_exists('mb_theme_enqueue_scripts')) {
 
   	wp_enqueue_style('main', mb_css_dir() . '/main.css');
   }
+}
+
+function mb_add_infinite_scroll_support() {
+	add_theme_support( 'infinite-scroll', array(
+	    'container'  => 'content',
+	    'footer'     => false,
+	) );
 }

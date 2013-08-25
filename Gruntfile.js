@@ -310,8 +310,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'compass:dist',
         'coffee',
-        'cssmin',
-        'requirejs'
+        'cssmin'
     ]);
 
     grunt.registerTask('default', [

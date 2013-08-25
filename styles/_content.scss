@@ -1,0 +1,66 @@
+// calculate the breakpoint under which the content
+// cannot be centred
+
+$content-minimum-left-margin:
+  max($large-screen-profile-width, $large-screen-profile-left-border-width + $large-screen-picture-width)
+  + $large-screen-post-header-marker-width + $large-screen-post-header-marker-offset
+  + $content-left-margin;
+
+$width-breakpoint: 
+  2 * (
+    max($large-screen-profile-width, $large-screen-profile-left-border-width + $large-screen-picture-width)
+    + $large-screen-post-header-marker-width + $large-screen-post-header-marker-offset
+    + $content-left-margin
+    + $content-max-width / 2);
+
+.content {
+	margin: 0;
+	max-width: none;
+	padding: $content-padding;
+
+  h1.post-title {
+    margin-left: -$post-header-marker-offset - $post-header-marker-width;
+    padding-left: $post-header-marker-offset;
+
+    border-left-width: $post-header-marker-width;
+    border-left-color: $post-header-marker-color;
+    border-left-style: solid;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .post {
+    padding-top: emCalc(25);
+    padding-bottom: emCalc(12);
+    border-bottom: emCalc(1) dashed rgb(180, 180, 180);
+
+    #disqus_thread {
+      border-top: emCalc(1) dotted rgb(200, 200, 200);
+      padding-top: emCalc(25);
+    }
+  }
+}
+
+@include large-screen {
+  .content {
+    margin: emCalc(35) 0 0 $content-minimum-left-margin;
+		max-width: $content-max-width;
+
+	  h1.post-title {
+	    margin-left: -$large-screen-post-header-marker-offset - $large-screen-post-header-marker-width;
+	    padding-left: $large-screen-post-header-marker-offset;
+	    border-left-width: $large-screen-post-header-marker-width;
+	  }
+  }
+}
+
+@media only screen and (min-width: #{$width-breakpoint + 1}) {
+	.content {
+		// Center the content
+		margin: emCalc(35) auto 0 auto;
+
+		max-width: $content-max-width;
+	}
+}
