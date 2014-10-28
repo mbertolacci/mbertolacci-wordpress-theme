@@ -34,7 +34,17 @@ $width-breakpoint:
   .post {
     padding-top: emCalc(25);
     padding-bottom: emCalc(12);
-    border-bottom: emCalc(1) dashed rgb(180, 180, 180);
+
+    &:after {
+      display: block;
+      content: ' ';
+      height: 40px;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 15px inset;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 15px inset;
+    }
 
     #disqus_thread {
       border-top: emCalc(1) dotted rgb(200, 200, 200);
