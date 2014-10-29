@@ -31,6 +31,12 @@ $width-breakpoint:
     }
   }
 
+  .post-date {
+    font-family: $header-font-family;
+    font-size: 0.9em;
+    padding: 0 0 1em 0;
+  }
+
   .post {
     padding-top: emCalc(25);
     padding-bottom: emCalc(12);
