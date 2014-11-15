@@ -20,11 +20,14 @@ $width-breakpoint:
 
   h1.post-title {
     margin-left: -$post-header-marker-offset - $post-header-marker-width;
+    margin-bottom: $post-header-margin-bottom;
     padding-left: $post-header-marker-offset;
 
     border-left-width: $post-header-marker-width;
     border-left-color: $post-header-marker-color;
     border-left-style: solid;
+
+    text-align: center;
 
     a {
       color: inherit;
@@ -32,9 +35,12 @@ $width-breakpoint:
   }
 
   .post-date {
+    padding: 0 0 1em 0;
+
     font-family: $header-font-family;
     font-size: 0.9em;
-    padding: 0 0 1em 0;
+
+    text-align: center;
   }
 
   .post {

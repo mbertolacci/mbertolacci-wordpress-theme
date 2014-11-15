@@ -46,12 +46,13 @@ $content-padding: emCalc(10);
 $content-left-margin: emCalc(70);
 $content-max-width: emCalc(600);
 
+$post-header-margin-bottom: emCalc(2);
 $post-header-marker-color: rgb(160, 160, 160);
-$post-header-marker-width: emCalc(2.5);
+$post-header-marker-width: emCalc(0);
 $post-header-marker-offset: emCalc(4);
 
-$large-screen-post-header-marker-width: emCalc(20);
-$large-screen-post-header-marker-offset: emCalc(20);
+$large-screen-post-header-marker-width: emCalc(0);
+$large-screen-post-header-marker-offset: emCalc(17);
 
 @mixin large-screen {
   @media only screen and (min-width: #{$small-screen}){
